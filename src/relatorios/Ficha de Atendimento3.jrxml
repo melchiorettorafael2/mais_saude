@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Ficha de Atendimento3" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="39577c9d-91d6-4c15-945d-cc0eb4a1a18a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from consulta order by id_consulta DESC;]]>
+	</queryString>
+	<field name="id_consulta" class="java.lang.Integer"/>
+	<field name="nome_paciente" class="java.lang.String"/>
+	<field name="motivo_atendimento" class="java.lang.String"/>
+	<field name="nome_medico" class="java.lang.String"/>
+	<field name="crm_medico" class="java.lang.Integer"/>
+	<field name="diagnostico_atendimento" class="java.lang.String"/>
+	<field name="receita" class="java.lang.String"/>
+	<field name="status_atendimento" class="java.lang.String"/>
+	<field name="nascimento_paciente" class="java.lang.String"/>
+	<field name="horario_atendimento" class="java.lang.String"/>
+	<field name="data_atendimento" class="java.lang.String"/>
+	<field name="sus_paci" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="160" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="212" height="20" uuid="238100c9-9a7a-433c-92b8-fff066683eb5"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ficha de Atendimento Médico]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="371" y="0" width="184" height="20" uuid="9dfae44a-649e-4b2b-ba13-552aa719f8f9"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="139" width="555" height="1" uuid="b399024b-7b3a-4ae3-b5c6-8d46ec3ed02c"/>
+			</line>
+			<image>
+				<reportElement x="212" y="-11" width="140" height="140" uuid="491f63cf-4518-4694-8074-504e6a46f836"/>
+				<imageExpression><![CDATA["C:\\Sistema_Mais_Saude\\src\\img\\formulario_logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="102" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="419" y="61" width="100" height="20" uuid="d8a47d0e-be5d-4cbd-8ad3-bcf14f18d281"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="0" width="126" height="20" uuid="19baf9de-c5a2-4807-9936-4e5897dbf1e8"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_paciente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="61" width="39" height="20" uuid="7f49e21a-1ac6-456e-b77c-a62342dfc98e"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="0" width="39" height="20" uuid="8342f24f-f488-48da-8f01-8a9a9a30c48c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="0" width="137" height="20" uuid="19d1df5e-a0fb-408e-bff4-ee05df2d68da"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data de Nascimento:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="61" width="134" height="20" uuid="2b66d02d-3de7-43d3-9738-b97142e914db"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data do Atendimento:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="97" width="555" height="1" uuid="65a55c56-8d5c-469e-8e41-4485d8b3b0fa"/>
+			</line>
+			<textField>
+				<reportElement x="418" y="0" width="153" height="20" uuid="cfdbd833-9fe6-4a49-91b4-37fe4d8c8638"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nascimento_paciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="44" y="61" width="100" height="20" uuid="e34682b1-1534-45fd-975a-f7c1597c6186"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sus_paci}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="414" splitType="Stretch">
+			<textField>
+				<reportElement x="58" y="73" width="139" height="20" uuid="9fc9c30e-c23d-451e-bb99-179e0dce05f7"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{motivo_atendimento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="73" width="47" height="20" uuid="33c1ba5d-46d6-4973-b712-0dd1cc6d0ee3"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Queixa:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="232" y="187" width="55" height="20" uuid="d9a97483-a55e-44dd-a216-76829b0a9934"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Receita]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="110" width="555" height="1" uuid="727cd05c-a957-479e-8f7b-4111c74b9f84"/>
+			</line>
+			<textField>
+				<reportElement x="13" y="212" width="517" height="201" uuid="02e64046-1352-4aa8-8567-f9ee3d8439ae"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{receita}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="17" width="57" height="20" uuid="664a6c76-025f-443d-8214-5c86cd54753d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Médico:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="59" y="17" width="115" height="20" uuid="2eac1ef8-6988-4599-b246-f468585d856d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_medico}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="291" y="17" width="40" height="20" uuid="1d4e5ab8-3bc6-4de1-ac7b-8b0c6d49d72a"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CRM:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="324" y="17" width="100" height="20" uuid="c3e2a98a-7b72-49d9-9306-ec7c2adf1fb2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{crm_medico}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="165" width="555" height="1" uuid="4aaa26f3-7b5d-4f8e-bb18-0b935044ea11"/>
+			</line>
+			<staticText>
+				<reportElement x="11" y="128" width="127" height="20" uuid="39cbfdfc-d403-477f-8ad7-4683e4f0b0f4"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hipótese Diagnóstica:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="128" width="175" height="20" uuid="f990eb45-c97b-455c-b54c-50086d477354"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{diagnostico_atendimento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="f0a9e6c2-a9ac-42d2-b271-f66a600100c8"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

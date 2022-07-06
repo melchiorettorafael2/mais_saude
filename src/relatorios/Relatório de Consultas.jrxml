@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatório de Pacientes" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ded4bd12-a567-4cfc-9dc6-af4cc062e1f3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from consulta order by id_consulta;]]>
+	</queryString>
+	<field name="id_consulta" class="java.lang.Integer"/>
+	<field name="nome_paciente" class="java.lang.String"/>
+	<field name="motivo_atendimento" class="java.lang.String"/>
+	<field name="nome_medico" class="java.lang.String"/>
+	<field name="crm_medico" class="java.lang.Integer"/>
+	<field name="diagnostico_atendimento" class="java.lang.String"/>
+	<field name="receita" class="java.lang.String"/>
+	<field name="status_atendimento" class="java.lang.String"/>
+	<field name="nascimento_paciente" class="java.lang.String"/>
+	<field name="horario_atendimento" class="java.lang.String"/>
+	<field name="data_atendimento" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="31" width="77" height="31" uuid="b9ed8b97-808c-4698-8b9b-33e12424a958"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Consultas]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="371" y="31" width="184" height="31" uuid="d3e652f4-61e8-4c45-8f67-495d3df8b4ff"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="71" width="555" height="1" uuid="259769df-78dd-4fbe-b7f8-433b4ec2f72b"/>
+			</line>
+			<image>
+				<reportElement x="222" y="0" width="113" height="71" uuid="811bb47d-9acf-4a61-b794-78ae7bf4ee8b"/>
+				<imageExpression><![CDATA["C:\\Sistema_Mais_Saude\\src\\img\\formulario_logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="21" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="177" y="0" width="100" height="20" uuid="3c57c42e-2175-4747-a386-d6990b3d880f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Diagnóstico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="97" height="20" uuid="4a243f1e-762b-4b3c-9128-61d09a776b9f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Consulta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="77" y="0" width="100" height="20" uuid="5286ae03-8ed5-40bb-9840-3a1ba87a6185"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Paciente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="277" y="0" width="100" height="20" uuid="3177710b-a50a-4562-90c7-f968fa3c4a1d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Médico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="377" y="0" width="100" height="20" uuid="d6398e0b-bc39-4bb3-b6e9-82a662a7ab31"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="478" y="0" width="77" height="20" uuid="190968e2-e9f2-4e4e-b00c-a3de41dcd1d2"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Horário]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="9" y="0" width="47" height="20" uuid="91d362fe-9069-4991-9893-8e8ac42af998"/>
+				<textFieldExpression><![CDATA[$F{id_consulta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="77" y="0" width="100" height="20" uuid="39278ded-baa2-4088-93f9-fbb9a0bdd1e4"/>
+				<textFieldExpression><![CDATA[$F{nome_paciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="179" y="0" width="98" height="20" uuid="f6c12637-740f-443a-80c8-ac2acb235811"/>
+				<textFieldExpression><![CDATA[$F{diagnostico_atendimento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="277" y="0" width="100" height="20" uuid="29bf86aa-5961-4721-b01f-894170f709cd"/>
+				<textFieldExpression><![CDATA[$F{nome_medico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="377" y="0" width="100" height="20" uuid="630bc891-c3fe-443d-b6e8-f184883f47eb"/>
+				<textFieldExpression><![CDATA[$F{data_atendimento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="478" y="0" width="100" height="20" uuid="b42feba2-a51d-4cd5-9482-677a9e744737"/>
+				<textFieldExpression><![CDATA[$F{horario_atendimento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="21" width="100" height="20" uuid="de2ec259-e0e8-49d6-9aa9-0e1000c0dc0f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

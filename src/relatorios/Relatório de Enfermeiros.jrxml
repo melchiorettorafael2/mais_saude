@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatório de Pacientes" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ded4bd12-a567-4cfc-9dc6-af4cc062e1f3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from enfermeiros order by nome_enfermeiro;]]>
+	</queryString>
+	<field name="nome_enfermeiro" class="java.lang.String"/>
+	<field name="coren_enfermeiro" class="java.lang.Integer"/>
+	<field name="especialidade_enfermeiro" class="java.lang.String"/>
+	<field name="cod_enfermeiro" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="31" width="100" height="31" uuid="b9ed8b97-808c-4698-8b9b-33e12424a958"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Enfermeiros]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="371" y="31" width="184" height="31" uuid="d3e652f4-61e8-4c45-8f67-495d3df8b4ff"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="71" width="555" height="1" uuid="259769df-78dd-4fbe-b7f8-433b4ec2f72b"/>
+			</line>
+			<image>
+				<reportElement x="213" y="-7" width="110" height="78" uuid="1e05f112-374b-4f98-b7cb-7654cb86c913"/>
+				<imageExpression><![CDATA["C:\\Sistema_Mais_Saude\\src\\img\\formulario_logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="21" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="394" y="0" width="100" height="20" uuid="3c57c42e-2175-4747-a386-d6990b3d880f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Especialidade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="0" width="88" height="20" uuid="4a243f1e-762b-4b3c-9128-61d09a776b9f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="284" y="0" width="100" height="20" uuid="5286ae03-8ed5-40bb-9840-3a1ba87a6185"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COREN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="0" width="100" height="20" uuid="3177710b-a50a-4562-90c7-f968fa3c4a1d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="135" y="0" width="132" height="20" uuid="51ed67f7-cedd-4b66-a157-f2dd252145d6"/>
+				<textFieldExpression><![CDATA[$F{nome_enfermeiro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="0" width="100" height="20" uuid="355c3f79-4a14-42fd-9575-174a3d97c1af"/>
+				<textFieldExpression><![CDATA[$F{coren_enfermeiro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="0" width="118" height="20" uuid="9f8fc847-ed02-41bd-bea7-bb2160110c90"/>
+				<textFieldExpression><![CDATA[$F{especialidade_enfermeiro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="51" y="0" width="100" height="20" uuid="6ff8396f-d35b-482c-9342-d860385bfaa9"/>
+				<textFieldExpression><![CDATA[$F{cod_enfermeiro}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="21" width="100" height="20" uuid="de2ec259-e0e8-49d6-9aa9-0e1000c0dc0f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
